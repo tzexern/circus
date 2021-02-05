@@ -3,6 +3,9 @@ package circus;
 import circus.animal.Animal;
 import circus.animal.Duck;
 import circus.animal.Parrot;
+import circus.stuff.Cannon;
+import circus.stuff.Equipment;
+import circus.stuff.Ladder;
 
 public class Circus {
     private static Animal[] animals = {
@@ -22,7 +25,8 @@ public class Circus {
         }
     }
 
-    private static int calculateValue(Asset[] assets) {
+
+    private static int calculateAssetValue(Asset[] assets) {
         int total = 0;
         for (Asset a : assets) {
             if (a.getValue() <= 5) {
@@ -37,7 +41,7 @@ public class Circus {
 
     public static void main(String[] args) {
         makeAnimalsTalk();
-        System.out.println("Total value of equipments " + calculateValue(equipments));
-        System.out.println("Total value of animals " + calculateValue(animals));
+        System.out.println("Total value of animals " + calculateAssetValue(animals));
+        System.out.println("Total value of equipments " + calculateAssetValue(equipments));
     }
 }
